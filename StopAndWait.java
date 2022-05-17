@@ -49,7 +49,13 @@ class StopAndWait{
   public static void main(String args[])throws IOException{
   System.out.println("Stop and Wait for noiseless channels");
   Comms obj=new Comms(3000);
-  obj.Sender();
+    System.out.println("No of packets?");
+    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+    int no=Integer.parseInt(br.readLine());
+while(no>0){
+    obj.Sender();
+    no-=1;
+}
   }
 
 }
